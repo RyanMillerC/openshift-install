@@ -1,0 +1,44 @@
+apiVersion: v1
+baseDomain: "$OCP_BASE_DOMAIN"
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      zones:
+        - us-east-1a
+        - us-east-1b
+        - us-east-1c
+      type: r5.2xlarge
+  replicas: 3
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      zones:
+        - us-east-1a
+        - us-east-1b
+        - us-east-1c
+      type: m5.2xlarge
+  replicas: 3
+metadata:
+  name: "$OCP_CLUSTER_NAME"
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.0.0.0/16
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  aws:
+    region: us-east-1
+fips: true
+publish: External
+sshKey: "$OCP_SSH_KEY"
+pullSecret: "$OCP_PULL_SECRET"

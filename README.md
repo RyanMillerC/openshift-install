@@ -13,7 +13,7 @@ $ vim my-environment.env
 $ source my-environment.env
 
 # 4. Generate your install-config.yaml
-$ envsubst < aws-install-config.yaml > install-config.yaml
+$ envsubst < templates/aws-install-config.yaml > install-config.yaml
 
 # 5. Run OpenShift installer
 $ openshift-install create cluster --log-level=debug

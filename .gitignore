@@ -1,1 +1,5 @@
+# Any env files (they will have secrets)
 *.env
+
+# Rendered install config
+install-config.yaml

@@ -4,16 +4,19 @@
 
 ```bash
 # 1. Create your own environment file
-$ cp env.template my-environment.env
+$ cp template/aws-install-config.yaml install-config.yaml
 
-# 2. Replace variables with your environment's info
-$ vim my-environment.env
+# 2. Replace lines marked TODO with your environment's info
+$ vim install-config.yaml
 
-# 3. Source environment info
-$ source my-environment.env
+# 3. BACK UP install-config.yaml !!!
+# The openshift-installer will destroy this file!
+# You might need it again!
+# Also remember that this file has secrets in it!
 
-# 4. Generate your install-config.yaml
-$ envsubst < templates/aws-install-config.yaml > install-config.yaml
+# 4. Download openshift-install
+$ ./download.sh         # Get available versions
+$ ./download.sh 4.11.16 # Download openshift-install for OCP 4.11.16
 
 # 5. Run OpenShift installer
 $ openshift-install create cluster --log-level=debug

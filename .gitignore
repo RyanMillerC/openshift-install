@@ -3,3 +3,7 @@
 
 # Rendered install config
 install-config.yaml
+
+# Ignore any downloaded installers
+*.tar.gz
+openshift-install

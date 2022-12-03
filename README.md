@@ -4,7 +4,7 @@
 
 ```bash
 # 1. Create your own environment file
-$ cp template/aws-install-config.yaml install-config.yaml
+$ cp templates/aws-install-config.yaml install-config.yaml
 
 # 2. Replace lines marked TODO with your environment's info
 $ vim install-config.yaml

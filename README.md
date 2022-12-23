@@ -19,5 +19,5 @@ $ ./download.sh         # Get available versions
 $ ./download.sh 4.11.16 # Download openshift-install for OCP 4.11.16
 
 # 5. Run OpenShift installer
-$ openshift-install create cluster --log-level=debug
+$ ./openshift-install create cluster --log-level=debug
 ```

@@ -13,4 +13,8 @@ else
     curl -L \
          -o "openshift-install-linux-$VERSION.tar.gz" \
          "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/$VERSION/openshift-install-linux.tar.gz"
+    echo "Downloading oc version $VERSION..."
+    curl -L \
+         -o "openshift-client-linux-$VERSION.tar.gz" \
+         "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/$VERSION/openshift-client-linux.tar.gz"
 fi
